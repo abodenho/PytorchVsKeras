@@ -6,12 +6,13 @@ Le but de ce projet est de comparé pytorch et keras entre eux sur différent m�
 
 
 ### CNN 
+
 https://www.kaggle.com/tongpython/cat-and-dog 
 
 
 ### ANN
 
-https://www.kaggle.com/rikdifos/credit-card-approval-prediction?select=credit_record.csv 
+https://www.kaggle.com/barelydedicated/bank-customer-churn-modeling
 
 
 ### NPL 
