@@ -30,8 +30,12 @@ class CSVTraitement:
     def saveData(self,path):
         self.df.to_csv(path,index=False)
 
+    def deleteNameColum(self):
+        self.df = self.df.iloc[:,:]
+
 
 data = CSVTraitement("Churn_Modelling.csv")
+
 data.deletColumn(["RowNumber","CustomerId","Surname"])
 
 data.oneHotEncoder("Geography")
@@ -43,5 +47,7 @@ data.normalize("Tenure")
 data.normalize("Balance")
 data.normalize("NumOfProducts")
 data.normalize("EstimatedSalary")
+
+data.deleteNameColum()
 
 data.saveData('Churn_Modelling_traited.csv')

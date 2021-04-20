@@ -1,4 +1,4 @@
 class DataGetter:
-    def __init__(self,path,pourcentTrain):
+    def __init__(self,path):
         pass
 
