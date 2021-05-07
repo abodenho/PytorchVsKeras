@@ -1,9 +1,0 @@
-keras_adam_16_binary_crossentropy : 3.1228013038635254 
-keras_adam_16_mean_squared_error : 2.8505496978759766 
-keras_adam_16_mean_absolute_error : 2.9136147499084473 
-keras_sgd_16_binary_crossentropy : 2.8195300102233887 
-keras_sgd_16_mean_squared_error : 2.7284488677978516 
-keras_sgd_16_mean_absolute_error : 2.598331928253174 
-keras_rmsprop_16_binary_crossentropy : 3.071756601333618 
-keras_rmsprop_16_mean_squared_error : 2.9936866760253906 
-keras_rmsprop_16_mean_absolute_error : 2.905606985092163 

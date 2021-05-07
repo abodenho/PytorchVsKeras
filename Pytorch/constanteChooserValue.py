@@ -1,8 +1,7 @@
-from commun.CONSTANTE import *
 import torch.nn as nn
 import torch.optim as optim
 
-def getLossFunction():
+def getLossFunction(FUNCTION_LOSS):
     if FUNCTION_LOSS == "binary_crossentropy":
         function = nn.BCELoss()
     elif FUNCTION_LOSS == "mean_squared_error":
@@ -15,7 +14,7 @@ def getLossFunction():
     return function
 
 
-def getOptimize(model):
+def getOptimize(OPTIMIZER,model):
     if OPTIMIZER == "adam":
         optimizer = optim.Adam(model.parameters())
     elif OPTIMIZER == "sgd":

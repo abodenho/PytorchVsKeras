@@ -5,12 +5,16 @@ from commun.CONSTANTE import *
 import torch
 from commun.CommunFonction import writeIntoFilesKeras
 from commun.datasets.dataManager import DataManager
-import torch.optim as optim
 from math import ceil
+import sys
 
+OPTIMIZER = sys.argv[1]
+FUNCTION_LOSS = sys.argv[2]
+NUMBER_NEURONE_HIDDEN_LAYER_ANN = int(sys.argv[3])
+PathDataSet = sys.argv[4]
 
 beginTime = time.time()
-data = DataManager("../commun/datasets/ANN/Churn_Modelling_traited.csv")
+data = DataManager(PathDataSet)
 
 
 trainTensor,trainLabelTensor = data.getTrainCSV()
@@ -51,7 +55,7 @@ model = nn.Sequential(
     nn.Sigmoid()
 )
 
-optimizer = optim.Adam(model.parameters())
+optimizer = getOptimize(OPTIMIZER,model)
 
 
 def calculateAccuracy(result,target):
@@ -107,7 +111,7 @@ def trainLoop(numberEpoch,optimizer,model,lossFunction,
 
 
 
-lossFunction = getLossFunction()
+lossFunction = getLossFunction(FUNCTION_LOSS)
 
 trainLoop(NUMBER_EPOCH,optimizer,model,lossFunction,
           trainBatch,trainBatchLabel,
